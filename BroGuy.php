@@ -14,4 +14,16 @@ class BroGuy {
     }
   }
 
+  public static function doATryCatchAndThenLogException($tryFuncName, $catchFuncName) {
+    try {
+      if (is_callable(array(self, $tryFuncName)) {
+        call_user_func(array(self, $tryFuncName));
+      } catch (Exception $e) {
+        if (is_callable(array(self, $catchFuncName)) {
+          call_user_func(array(self, $catchFuncName);
+          BroGuy::log($e->getMessage());
+        }
+      }
+    }
+  }
 }
