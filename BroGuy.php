@@ -1,5 +1,31 @@
 <? // Main application code
 class BroGuy {
+  static $instance;
+  static $isGlobal;
+  static $shouldLog;
+
+  public function __construct($isGlobal = false, $shouldLog = GLOBAL_LOGGING, array $arguments = array()) {
+    self::isGlobal = $isGlobal;
+    self::shouldLog = $shouldLog;
+
+    // Bros dont limit other brogrammers with instance, ill take what you can give bro.
+    foreach ($arguments as $key => $value) {
+      $this->{$key} = $value;
+    }
+  }
+
+  /**
+   * Bros always use the singleton design pattern, but we also let people use the constructor because bros
+   * dont codeblock other bros.
+   * @return [type] [description]
+   */
+  public static function getInstance() {
+    if (is_null(self::instance)) {
+      self::instance = new BroGuy();
+    }
+
+    return self::instance;
+  }
 
   public static function log($message, $notForProduction = GLOBAL_PRODUCTION, $useEncryption = false) {
     if (!isset($_SESSION['log'][$message])) {
