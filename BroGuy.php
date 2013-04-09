@@ -3,6 +3,8 @@ class BroGuy {
   static $instance;
   static $isGlobal;
   static $shouldLog;
+  
+  private $_data = array():
 
   public function __construct($isGlobal = false, $shouldLog = GLOBAL_LOGGING, array $arguments = array()) {
     self::isGlobal = $isGlobal;
@@ -51,5 +53,31 @@ class BroGuy {
         }
       }
     }
+  }
+  
+  /**
+   * @params mixed
+   * @returns mixed
+   **/
+  public static function getData($k) {
+    if (is_array($k)) {
+      foreach ($k as $l) {
+        return self::getData($l);
+      }
+    } else {
+      if (isset(self::$_data[$k])) {
+        return self::$_data[$k];
+      }
+    }
+  }
+  
+  /**
+   * @param $k key
+   * @param $v value
+   * @returns 1
+   **/
+  public static function setData($k, $v) {
+    self::$_data[$v] = $v;
+    return 1;
   }
 }
