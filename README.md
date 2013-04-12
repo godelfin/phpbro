@@ -10,7 +10,9 @@ Features:
   success if all error logs are clean.
 - Incorporates the following Design Patterns: JSON Everywhere, Static Singleton, Globally-Defined (Universal Configuration) Constants, Looping SQL Queries
 - Simple Logger (SLogger) - simple, clean logging built-in (just uncomment the code where you need help debugging)
-- Event dispatching made easy with the Party Dispatcher component library. Brings all the parties to you, in your code.
+- Event dispatching made easy with the Party Dispatcher component library. Brings all the parties to you, in your code. 
+  Dispatching an event via Party Dispatcher will announce to all other applications that use PHPBro that a party is 
+  starting.
 
 Quick Start:
 Most configuration options are already defined in the config.php. Just uncomment the global constant you want to use for 
