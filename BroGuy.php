@@ -72,6 +72,9 @@ class BroGuy {
   }
   
   /**
+   * Brogrammers don't make their coode too complicated, so only go up to $a, $b, $c NEVER $d if you need $d just 
+   * put it in the $_data array
+   * 
    * @param $k key
    * @param $v value
    * @returns 1
