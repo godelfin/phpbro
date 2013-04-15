@@ -13,6 +13,8 @@ Features:
 - Event dispatching made easy with the Party Dispatcher component library. Brings all the parties to you, in your code. 
   Dispatching an event via Party Dispatcher will announce to all other applications that use PHPBro that a party is 
   starting.
+- Best of all, PHPBro has no versioning (less conflicts/updates). You're either on or off. Bonus is you get to use all the 
+  features, even the ones you don't want.
 
 Quick Start:
 Most configuration options are already defined in the config.php. Just uncomment the global constant you want to use for 
